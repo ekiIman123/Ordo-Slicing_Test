@@ -27,14 +27,34 @@ Pastikan Anda sudah menginstal hal-hal berikut di sistem Anda:
 1. **Clone Repositori**
 
    Clone repositori ini ke mesin lokal Anda:
-
    ```bash
    git clone https://github.com/ekiIman123/Ordo-Slicing_Test.git
    cd Ordo-Slicing_Test
+   Instal Dependensi PHP
 
-2. **Running the Script**
-   ```bash
-   php artisan serve
-kemudian jalankan juga command dibawah pada terminal baru
+2. **Install dependensi PHP**
+
+   Jalankan perintah berikut untuk menginstal semua dependensi PHP:
+    ```bash
+    composer install
+
+3. **Instal Dependensi Node.js**
+
+    Jalankan perintah berikut untuk menginstal semua dependensi frontend (termasuk SASS):
+    ```bash
+    npm install
+    
+4. **Menjalankan Aplikasi**
+   Menjalankan Server Laravel
+
+    Untuk menjalankan server pengembangan Laravel, jalankan:
+    
+    ```bash
+    php artisan serve
+
+5. Menjalankan SASS dan Build Frontend
+
+   Untuk mengompilasi SASS dan menjalankan build frontend secara otomatis, jalankan:
+
    ```bash
    npm run dev
