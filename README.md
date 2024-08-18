@@ -29,12 +29,12 @@ Pastikan Anda sudah menginstal hal-hal berikut di sistem Anda:
    Clone repositori ini ke mesin lokal Anda:
 
    ```bash
-   git clone [https://github.com/username/nama-repositori.git](https://github.com/ekiIman123/Ordo-Slicing_Test.git)
+   git clone https://github.com/ekiIman123/Ordo-Slicing_Test.git
    cd Ordo-Slicing_Test
 
 2. **Running the Script**
    ```bash
    php artisan serve
 kemudian jalankan juga command dibawah pada terminal baru
-```bash
-npm run dev
+   ```bash
+   npm run dev
