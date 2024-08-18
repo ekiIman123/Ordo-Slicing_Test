@@ -1,0 +1,1756 @@
+$font-Outfit: "Outfit", sans-serif;
+$font-Inter: "Inter", sans-serif;
+
+$theme-colors: (
+    primary: #336913,
+    secondary: #ffffff,
+    third: #dddddd,
+);
+
+@mixin parent-width() {
+    width: 100%;
+    max-width: 1920px;
+}
+
+@mixin child-element($max-size) {
+    width: 100%;
+    max-width: $max-size;
+}
+
+@mixin centering-component() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin button-border($color) {
+    border: 1px solid $color;
+    border-radius: 9000px;
+    padding: 10px 25px;
+}
+
+@mixin text-format($ff, $fw, $fs, $lh, $ls) {
+    font-family: $ff;
+    font-weight: $fw;
+    font-size: $fs;
+    line-height: $lh;
+    letter-spacing: $ls;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    @include centering-component();
+    flex-direction: column;
+    justify-self: start;
+
+    body {
+        @include parent-width();
+
+        @include centering-component();
+        flex-direction: column;
+
+        nav {
+            @include parent-width();
+            height: 100px;
+            padding: 25px 70px;
+
+            @include centering-component();
+            justify-content: space-between;
+            gap: 10px;
+
+            background-color: map-get($theme-colors, secondary);
+
+            .nav-brand {
+                height: 50px;
+
+                img {
+                    width: 165px;
+                    height: 50px;
+                }
+            }
+
+            .nav-menu {
+                width: 100%;
+                height: 24px;
+
+                @include centering-component();
+
+                ul {
+                    @include centering-component();
+                    gap: 24px;
+                    list-style-type: none;
+
+                    li {
+                        font-family: $font-Outfit;
+                        font-size: 16px;
+
+                        a {
+                            color: black;
+                            text-decoration: none;
+
+                            span {
+                                @include text-format(
+                                    $font-Outfit,
+                                    400,
+                                    15.5px,
+                                    24px,
+                                    -0.5%
+                                );
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .nav-cta {
+                justify-content: end;
+                width: 200px;
+                height: 43px;
+
+                @include centering-component();
+                gap: 24px;
+
+                button {
+                    width: 169px;
+                    height: 43px;
+                    gap: 10px;
+                    cursor: pointer;
+                    background-color: map-get($theme-colors, secondary);
+                    @include button-border(map-get($theme-colors, third));
+
+                    span {
+                        width: 119px;
+                        height: 23px;
+                        color: map-get($theme-colors, primary);
+                        @include text-format(
+                            $font-Outfit,
+                            600,
+                            14.5px,
+                            22.5px,
+                            -0.5%
+                        );
+                    }
+                }
+            }
+        }
+
+        main {
+            @include parent-width();
+            height: 806px;
+
+            .content-wrapper {
+                width: 100%;
+                height: 686px;
+                position: relative;
+
+                @include centering-component();
+                align-items: start;
+
+                .leaderboard-bg {
+                    position: absolute;
+                    z-index: -1;
+                    top: 90px;
+                    right: -2px;
+
+                    img {
+                        width: 692.51px;
+                        height: 866.17px;
+                    }
+                }
+
+                .left-content {
+                    width: 50%;
+                    max-width: 1920/2;
+                    height: 100%;
+
+                    .left-top-content {
+                        width: 100%;
+                        height: 437px;
+                        padding: 50px 70px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 40px;
+
+                        .lt-section-title {
+                            width: 100%;
+                            height: 160px;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 16px;
+
+                            .submenu {
+                                width: 282px;
+                                height: 44px;
+                                gap: 10px;
+
+                                @include centering-component();
+                                @include button-border(
+                                    map-get($theme-colors, third)
+                                );
+
+                                span {
+                                    @include text-format(
+                                        $font-Outfit,
+                                        400,
+                                        15.5px,
+                                        24px,
+                                        -0.5%
+                                    );
+                                    text-align: center;
+                                }
+                            }
+
+                            .title {
+                                width: 100%;
+                                height: 100px;
+
+                                span {
+                                    @include text-format(
+                                        $font-Outfit,
+                                        700,
+                                        39.5px,
+                                        50px,
+                                        -0.5%
+                                    );
+                                    color: #000000;
+                                }
+                            }
+                        }
+
+                        .lt-section-progress {
+                            width: 100%;
+                            height: 137px;
+                            padding: 35px;
+
+                            @include centering-component();
+
+                            background-color: map-get($theme-colors, secondary);
+                            border: 1px solid #eeeeee;
+                            border-radius: 20px;
+                            box-shadow: 0px 0px 20px 0px #0000000d;
+
+                            .body-progress {
+                                width: 100%;
+                                height: 77px;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 30px;
+
+                                .progress {
+                                    width: 100%;
+                                    height: 77px;
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 17px;
+
+                                    .progress-top {
+                                        width: 100%;
+                                        height: 45px;
+                                        @include centering-component();
+                                        justify-content: space-between;
+
+                                        .progress-desc {
+                                            height: 45px;
+                                            @include centering-component();
+                                            gap: 11px;
+
+                                            img {
+                                                width: 40px;
+                                                height: 40px;
+                                            }
+
+                                            .progress-text {
+                                                height: 45px;
+                                                color: map-get(
+                                                    $theme-colors,
+                                                    primary
+                                                );
+
+                                                @include text-format(
+                                                    $font-Inter,
+                                                    700,
+                                                    29.5px,
+                                                    45px,
+                                                    0
+                                                );
+                                                text-align: center;
+
+                                                span {
+                                                    @include text-format(
+                                                        $font-Inter,
+                                                        500,
+                                                        15.5px,
+                                                        24px,
+                                                        0
+                                                    );
+                                                    text-align: center;
+                                                }
+                                            }
+                                        }
+                                        .progress-cta {
+                                            button {
+                                                height: 43px;
+                                                cursor: pointer;
+
+                                                @include centering-component();
+                                                gap: 5px;
+                                                background-color: map-get(
+                                                    $theme-colors,
+                                                    primary
+                                                );
+                                                @include button-border(
+                                                    map-get(
+                                                        $theme-colors,
+                                                        primary
+                                                    )
+                                                );
+
+                                                span {
+                                                    color: map-get(
+                                                        $theme-colors,
+                                                        secondary
+                                                    );
+                                                    @include text-format(
+                                                        $font-Outfit,
+                                                        600,
+                                                        14.5px,
+                                                        22.5px,
+                                                        -0.5%
+                                                    );
+                                                    text-align: center;
+                                                }
+
+                                                img {
+                                                    height: 18px;
+                                                    width: 18px;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .progress-bottom {
+                                        height: 15px;
+                                        width: 100%;
+                                        border-radius: 900px;
+                                        background-color: #eff7ef;
+
+                                        .progress-bar {
+                                            width: 220px;
+                                            height: 15px;
+                                            border-radius: 900px;
+                                            background-color: map-get(
+                                                $theme-colors,
+                                                primary
+                                            );
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .left-bottom-content {
+                        width: 100%;
+                        height: 249px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            overflow: hidden;
+                            object-fit: cover;
+                        }
+                    }
+                }
+
+                .vertical-line {
+                    width: 1px;
+                    height: 680px;
+                    background-color: #eeeeee;
+                }
+
+                .right-content {
+                    width: 50%;
+                    max-width: 1920/2;
+                    height: 100%;
+                    padding: 32px 42px 24px 42px;
+                    gap: 28px;
+
+                    @include centering-component();
+                    flex-direction: column;
+
+                    .right-top-content {
+                        width: 100%;
+                        height: 101px;
+
+                        @include centering-component();
+                        flex-direction: column;
+                        align-items: start;
+                        gap: 14px;
+
+                        .rt-title {
+                            width: 100%;
+                            height: 40px;
+
+                            @include centering-component();
+                            justify-content: start;
+                            gap: 24px;
+
+                            span {
+                                @include text-format(
+                                    $font-Outfit,
+                                    700,
+                                    32px,
+                                    40px,
+                                    -0.5%
+                                );
+                            }
+                        }
+
+                        .rt-filter {
+                            height: 47px;
+
+                            @include centering-component();
+                            gap: 10px;
+
+                            button:nth-child(1) {
+                                width: 180px;
+                                height: 47px;
+                                @include button-border(#85bb50);
+
+                                span {
+                                    width: 120px;
+                                    height: 27px;
+
+                                    @include text-format(
+                                        $font-Outfit,
+                                        600,
+                                        17.5px,
+                                        27px,
+                                        -0.5%
+                                    );
+                                    color: #2d9444;
+                                    text-align: center;
+                                }
+                            }
+
+                            button:nth-child(2) {
+                                width: 158px;
+                                height: 47px;
+                                @include button-border(#dddddd);
+
+                                span {
+                                    width: 98px;
+                                    height: 27px;
+                                    @include text-format(
+                                        $font-Outfit,
+                                        500,
+                                        17.5px,
+                                        27px,
+                                        -0.5%
+                                    );
+                                    color: #888888;
+                                    text-align: center;
+                                }
+                            }
+
+                            button {
+                                background-color: map-get(
+                                    $theme-colors,
+                                    secondary
+                                );
+                                @include centering-component();
+
+                                gap: 10px;
+                                cursor: pointer;
+                                padding: 10px 30px;
+                            }
+                        }
+                    }
+
+                    .right-bottom-content {
+                        width: 100%;
+                        height: 501px;
+
+                        @include centering-component();
+                        flex-direction: column;
+                        justify-content: start;
+
+                        ul {
+                            width: 100%;
+                            @include centering-component();
+                            flex-direction: column;
+                            gap: 10px;
+                            list-style-type: none;
+
+                            .donatur-line {
+                                width: 100%;
+                                hr {
+                                    width: 100%;
+                                    height: 1px;
+                                    border: none;
+                                    background-color: #eeeeee;
+                                }
+                            }
+
+                            .donatur-list {
+                                width: 100%;
+                                height: 60px;
+                                @include centering-component();
+                                justify-content: space-between;
+
+                                .left-donatur-list {
+                                    height: 60px;
+
+                                    @include centering-component();
+                                    gap: 16px;
+
+                                    .num-donatur-list {
+                                        width: 48px;
+                                        height: 48px;
+
+                                        @include centering-component();
+                                        gap: 10px;
+
+                                        border: 1px solid
+                                            map-get($theme-colors, primary);
+                                        border-radius: 70px;
+                                        background-color: map-get(
+                                            $theme-colors,
+                                            primary
+                                        );
+
+                                        span {
+                                            @include text-format(
+                                                $font-Outfit,
+                                                700,
+                                                17.5px,
+                                                22.5px,
+                                                -0.5%
+                                            );
+                                            text-align: center;
+
+                                            color: map-get(
+                                                $theme-colors,
+                                                secondary
+                                            );
+                                        }
+                                    }
+
+                                    .desc-donatur-list {
+                                        height: 60px;
+
+                                        @include centering-component();
+                                        gap: 8px;
+
+                                        .logo-donatur {
+                                            width: 60px;
+                                            height: 60px;
+                                            padding: 4px;
+
+                                            @include centering-component();
+                                            gap: 10px;
+
+                                            img {
+                                                width: 60px;
+                                                height: 60px;
+                                                object-fit: cover;
+                                            }
+                                        }
+
+                                        .text-donatur {
+                                            height: 45px;
+
+                                            @include centering-component();
+                                            flex-direction: column;
+                                            align-items: start;
+
+                                            span:nth-child(1) {
+                                                @include text-format(
+                                                    $font-Outfit,
+                                                    400,
+                                                    11.8px,
+                                                    18px,
+                                                    -0.5%
+                                                );
+                                                text-align: center;
+                                            }
+
+                                            span:nth-child(2) {
+                                                @include text-format(
+                                                    $font-Outfit,
+                                                    700,
+                                                    19.8px,
+                                                    30px,
+                                                    -0.5%
+                                                );
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .right-donatur-list {
+                                    width: 123.25px;
+                                    height: 34px;
+
+                                    @include centering-component();
+                                    gap: 8.25px;
+
+                                    .image-contribute-donatur {
+                                        img {
+                                            width: 30px;
+                                            height: 30px;
+                                        }
+                                    }
+
+                                    .text-contribute-donatur {
+                                        width: 85px;
+                                        height: 34px;
+
+                                        span:nth-child(1) {
+                                            @include text-format(
+                                                $font-Inter,
+                                                700,
+                                                22.3px,
+                                                33.75px,
+                                                0
+                                            );
+                                            text-align: center;
+                                        }
+
+                                        span:nth-child(2) {
+                                            @include text-format(
+                                                $font-Inter,
+                                                500,
+                                                11.8px,
+                                                18px,
+                                                0
+                                            );
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .donatur-list:nth-child(8) {
+                                .left-donatur-list {
+                                    .num-donatur-list {
+                                        border: 1px solid #85bb50;
+                                        background-color: #85bb50;
+                                    }
+                                }
+                            }
+
+                            .donatur-list:nth-child(10) {
+                                .left-donatur-list {
+                                    .num-donatur-list {
+                                        border: 1px solid #a7cc05;
+                                        background-color: #a7cc05;
+                                    }
+                                }
+                            }
+
+                            .donatur-list:nth-child(12) {
+                                .left-donatur-list {
+                                    .num-donatur-list {
+                                        border: 1px solid #a7cc05;
+                                        background-color: #a7cc05;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .footer-logos {
+                @include parent-width();
+                height: 120px;
+                background-color: #f5f8fa;
+
+                padding: 0 70px;
+                @include centering-component();
+
+                ul {
+                    width: 100%;
+                    height: 40.5px;
+                    list-style-type: none;
+                    padding: 3px 0;
+
+                    @include centering-component();
+                    justify-content: space-between;
+
+                    li {
+                        @include centering-component();
+                        height: 80%;
+
+                        img {
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .about {
+            @include parent-width();
+            height: 862px;
+
+            background-color: map-get($theme-colors, secondary);
+            @include centering-component();
+            gap: 10px;
+            padding: 70px 78px;
+
+            .about-wrapper {
+                width: 100%;
+                height: 100%;
+                position: relative;
+
+                @include centering-component();
+                flex-direction: column;
+                justify-content: start;
+                gap: 44px;
+
+                .about-content-top {
+                    width: 100%;
+                    height: 271px;
+                    @include centering-component();
+
+                    .about-title-logo {
+                        width: 900px;
+                        height: 271px;
+
+                        @include centering-component();
+                        flex-direction: column;
+                        gap: 10px;
+
+                        .about-logo {
+                            @include centering-component();
+
+                            .about-logo-left {
+                                width: 120px;
+                                height: 120px;
+                                position: relative;
+
+                                @include centering-component();
+
+                                img:nth-child(2) {
+                                    width: 120px;
+                                    height: 120px;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                }
+                                img {
+                                    width: 82.76px;
+                                    height: 51.32px;
+                                    top: 34.64px;
+                                    left: 18.6px;
+                                }
+                            }
+
+                            .about-logo-right {
+                                width: 120px;
+                                height: 120px;
+                                position: relative;
+
+                                @include centering-component();
+
+                                img:nth-child(2) {
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                }
+
+                                img {
+                                    width: 120px;
+                                    height: 120px;
+                                }
+                            }
+                        }
+                        .about-title {
+                            width: 100%;
+                            height: 141px;
+
+                            @include centering-component();
+                            flex-direction: column;
+                            gap: 10px;
+
+                            .about-title-top {
+                                @include text-format(
+                                    $font-Outfit,
+                                    700,
+                                    39.8px,
+                                    50px,
+                                    -0.5%
+                                );
+                                text-align: center;
+                            }
+
+                            .about-title-bottom {
+                                @include text-format(
+                                    $font-Outfit,
+                                    300,
+                                    17.8px,
+                                    27px,
+                                    0
+                                );
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+                .about-content-bottom {
+                    width: 100%;
+                    height: 401px;
+
+                    @include centering-component();
+                    gap: 20px;
+
+                    .about-image-left {
+                        height: 100%;
+                        width: 100%;
+
+                        @include centering-component();
+                        flex-direction: column;
+                        gap: 24px;
+
+                        .about-image {
+                            width: 100%;
+                            height: 344px;
+
+                            @include centering-component();
+
+                            img {
+                                border-radius: 24px;
+                                width: 100%;
+                                height: 100%;
+                                overflow: hidden;
+                                object-fit: cover;
+                            }
+                        }
+
+                        .about-desc {
+                            @include text-format(
+                                $font-Outfit,
+                                600,
+                                21.8px,
+                                33px,
+                                -0.5%
+                            );
+
+                            text-align: center;
+                        }
+                    }
+
+                    .about-image-right {
+                        height: 100%;
+                        width: 100%;
+
+                        @include centering-component();
+                        gap: 24px;
+                        flex-direction: column;
+
+                        .about-image {
+                            width: 100%;
+                            height: 344px;
+
+                            @include centering-component();
+
+                            img {
+                                border-radius: 24px;
+                                width: 100%;
+                                height: 100%;
+                                overflow: hidden;
+                                object-fit: cover;
+                            }
+                        }
+
+                        .about-desc {
+                            @include text-format(
+                                $font-Outfit,
+                                600,
+                                21.8px,
+                                33px,
+                                -0.5%
+                            );
+
+                            text-align: center;
+                        }
+                    }
+
+                    .tranformation-div {
+                        width: 200px;
+                        height: 120px;
+                        border-radius: 30px;
+                        position: absolute;
+
+                        @include centering-component();
+                        flex-direction: column;
+                        background-color: map-get($theme-colors, secondary);
+
+                        .about-transformation-image {
+                            width: 100px;
+                            height: 100px;
+                            position: absolute;
+                            top: -5px;
+                            left: 50px;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+                        .about-transformation-text {
+                            position: absolute;
+                            top: 75px;
+                            left: 31px;
+
+                            span {
+                                color: #2d9444;
+
+                                @include text-format(
+                                    $font-Outfit,
+                                    700,
+                                    15px,
+                                    22.3px,
+                                    -0.5%
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .details {
+            width: 100%;
+            height: 870.37px;
+            padding: 70px 78px;
+
+            background-color: #f5faf8;
+            @include centering-component();
+
+            .details-wrapper {
+                height: 100%;
+                width: 100%;
+
+                @include centering-component();
+                gap: 50px;
+                flex-direction: column;
+
+                .details-content-top {
+                    width: 700px;
+                    height: 120px;
+
+                    @include centering-component();
+                    flex-direction: column;
+                    gap: 16px;
+
+                    .details-title {
+                        span {
+                            color: map-get($theme-colors, primary);
+                            @include text-format(
+                                $font-Outfit,
+                                700,
+                                40px,
+                                50px,
+                                -0.5%
+                            );
+                            text-align: center;
+                        }
+                    }
+                    .details-desc {
+                        @include centering-component();
+                        flex-direction: column;
+
+                        span {
+                            @include text-format(
+                                $font-Outfit,
+                                300,
+                                18px,
+                                27px,
+                                0
+                            );
+                            text-align: center;
+                        }
+                    }
+                }
+
+                .details-content-bottom {
+                    width: 100%;
+                    height: 730.37px;
+
+                    @include centering-component();
+                    flex-direction: column;
+                    gap: 40px;
+
+                    .details-event {
+                        width: 100%;
+                        height: 367px;
+                        // position: relative;
+                        border-radius: 44.24px;
+
+                        background-color: map-get($theme-colors, secondary);
+                        @include centering-component();
+                        gap: 20px;
+                        padding: 0 20px;
+                        justify-content: space-evenly;
+
+                        .details-event-left {
+                            width: 561.06px;
+                            height: 254.43px;
+
+                            @include centering-component();
+                            flex-direction: column;
+                            align-items: start;
+                            gap: 10.05px;
+
+                            .details-title {
+                                .details-date {
+                                    color: map-get($theme-colors, primary);
+                                    span {
+                                        @include text-format(
+                                            $font-Outfit,
+                                            600,
+                                            27.15px,
+                                            40.72px,
+                                            0
+                                        );
+                                    }
+                                }
+                                .details-time {
+                                    span {
+                                        @include text-format(
+                                            $font-Outfit,
+                                            700,
+                                            30.16px,
+                                            45.25px,
+                                            0
+                                        );
+                                    }
+                                }
+                            }
+
+                            .details-desc {
+                                width: 561.06px;
+                                height: 158.37px;
+
+                                @include centering-component();
+                                flex-direction: column;
+                                align-items: start;
+                                gap: 24.13px;
+
+                                .details-desc-text {
+                                    @include text-format(
+                                        $font-Outfit,
+                                        300,
+                                        16.09px,
+                                        21.72px,
+                                        0
+                                    );
+                                }
+                                .details-desc-line {
+                                    width: 100%;
+                                    hr {
+                                        width: 100%;
+                                        height: 1px;
+                                        border: none;
+                                        background-color: #e2e2e2;
+                                    }
+                                }
+                                .details-desc-cta {
+                                    button {
+                                        height: 44.11px;
+                                        padding: 10.05px 25.14px;
+                                        cursor: pointer;
+
+                                        color: map-get(
+                                            $theme-colors,
+                                            secondary
+                                        );
+                                        background-color: map-get(
+                                            $theme-colors,
+                                            primary
+                                        );
+                                        @include centering-component();
+                                        align-items: start;
+                                        gap: 10px;
+                                        @include button-border(
+                                            map-get($theme-colors, primary)
+                                        );
+                                        border-radius: 9049.33px;
+
+                                        span {
+                                            @include text-format(
+                                                $font-Outfit,
+                                                600,
+                                                15.06px,
+                                                22.62px,
+                                                -0.5%
+                                            );
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .details-event-right {
+                            width: 603.29px;
+                            height: 320.75px;
+                            position: relative;
+
+                            @include centering-component();
+
+                            .event-image {
+                                width: 100%;
+                                height: 100%;
+                                position: absolute;
+
+                                img {
+                                    border-radius: 32.18px;
+                                    width: 100%;
+                                    height: 100%;
+                                    overflow: hidden;
+                                    object-fit: cover;
+                                }
+                            }
+
+                            .event-nav {
+                                position: absolute;
+                                width: 100%;
+                                padding: 0 20px;
+
+                                @include centering-component();
+                                justify-content: space-between;
+
+                                button {
+                                    width: 40.22px;
+                                    height: 40.22px;
+                                    padding: 5.91px;
+                                    border-radius: 11.83px;
+                                    border: none;
+                                    cursor: pointer;
+
+                                    background-color: map-get(
+                                        $theme-colors,
+                                        primary
+                                    );
+                                    @include centering-component();
+
+                                    img {
+                                        width: 28.39px;
+                                        height: 28.39px;
+                                    }
+                                }
+
+                                button:nth-child(2) {
+                                    img {
+                                        transform: rotate(-180deg);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .details-timeline {
+                        width: 100%;
+                        height: 153.37px;
+
+                        ul {
+                            height: 100%;
+                            list-style: none;
+
+                            @include centering-component();
+                            gap: 33.46px;
+
+                            li {
+                                width: 230.03px;
+                                height: 100%;
+
+                                @include centering-component();
+                                flex-direction: column;
+                                gap: 25.09px;
+
+                                .event-timeline-line {
+                                    width: 100%;
+                                    hr {
+                                        width: 100%;
+                                        height: 4.18px;
+                                        border: none;
+                                        background-color: map-get(
+                                            $theme-colors,
+                                            third
+                                        );
+                                    }
+                                }
+
+                                .event-timeline-text {
+                                    .event-timeline-title {
+                                        span {
+                                            @include text-format(
+                                                $font-Outfit,
+                                                800,
+                                                25.09px,
+                                                37.64px,
+                                                0
+                                            );
+                                        }
+                                    }
+
+                                    .event-timeline-desc {
+                                        span {
+                                            @include text-format(
+                                                $font-Outfit,
+                                                300,
+                                                18.82px,
+                                                28.23px,
+                                                0
+                                            );
+                                        }
+                                    }
+                                }
+                            }
+
+                            li:nth-child(1) {
+                                .event-timeline-line {
+                                    hr {
+                                        background-color: #2d9444;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .sponsors {
+            width: 100%;
+            height: 1655.81px;
+            padding: 70px 78px;
+
+            @include centering-component();
+            flex-direction: column;
+            justify-content: start;
+            gap: 50px;
+
+            .sponsors-text {
+                width: 100%;
+
+                @include centering-component();
+                flex-direction: column;
+                gap: 10px;
+
+                .sponsors-title {
+                    color: #112d63;
+                    span {
+                        @include text-format(
+                            $font-Outfit,
+                            700,
+                            40px,
+                            50px,
+                            -0.5%
+                        );
+                        text-align: center;
+                    }
+                }
+                .sponsors-desc {
+                    width: 700px;
+
+                    @include centering-component();
+                    span {
+                        @include text-format($font-Outfit, 300, 18px, 27px, 0);
+                        text-align: center;
+                    }
+                }
+            }
+
+            .sponsors-table-personal {
+                width: 100%;
+                height: 503.65px;
+
+                @include centering-component();
+                flex-direction: column;
+                gap: 32px;
+
+                .sponsors-table-personal-title {
+                    span {
+                        @include text-format(
+                            $font-Outfit,
+                            600,
+                            26px,
+                            39px,
+                            -0.5%
+                        );
+                        text-align: center;
+                    }
+                }
+
+                table {
+                    width: 100%;
+                    // height: 432.65px;
+                    border: 0.42px solid #abebff;
+                    border-radius: 19.2px;
+                    background-color: #e0f6ff;
+
+                    thead {
+                        tr {
+                            th {
+                                color: #1a2232;
+                                height: 59px;
+
+                                span {
+                                    @include text-format(
+                                        $font-Outfit,
+                                        500,
+                                        16.62px,
+                                        19.95px,
+                                        0
+                                    );
+                                    text-align: center;
+                                }
+                            }
+
+                            .colom-1 {
+                                width: 293px;
+                            }
+
+                            .colom-2 {
+                                width: 171px;
+                            }
+
+                            .colom-3 {
+                                width: 183px;
+                            }
+
+                            .colom-4 {
+                                width: 184px;
+                            }
+
+                            .colom-5 {
+                                width: 184px;
+                            }
+
+                            .colom-6 {
+                                width: 269px;
+                            }
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            &:nth-child(odd) {
+                                background-color: map-get(
+                                    $theme-colors,
+                                    secondary
+                                );
+                            }
+
+                            &:nth-child(even) {
+                                background-color: #f8fdff;
+                            }
+
+                            &:last-child {
+                                td:first-child {
+                                    border-bottom-left-radius: 19.2px;
+                                }
+
+                                td:last-child {
+                                    border-bottom-right-radius: 19.2px;
+                                }
+                            }
+
+                            td {
+                                // border: 1px solid black;
+                                height: 59px;
+                                text-align: center;
+
+                                color: #1a2232;
+
+                                span {
+                                    @include text-format(
+                                        $font-Outfit,
+                                        400,
+                                        16.62px,
+                                        19.95px,
+                                        0
+                                    );
+                                }
+                            }
+
+                            .colom-1 {
+                                @include centering-component();
+                                justify-content: start;
+                                gap: 8.31px;
+                                padding: 0 0 0 20.78px;
+
+                                span {
+                                    @include text-format(
+                                        $font-Outfit,
+                                        500,
+                                        16.62px,
+                                        19.95px,
+                                        0
+                                    );
+                                    text-align: left;
+                                }
+
+                                img {
+                                    width: 26px;
+                                    height: 27.06px;
+                                }
+                            }
+
+                            .colom-6 {
+                                @include centering-component();
+
+                                button {
+                                    height: 33px;
+                                    cursor: pointer;
+
+                                    color: map-get($theme-colors, secondary);
+                                    background-color: #518bbb;
+                                    @include centering-component();
+                                    gap: 5px;
+                                    @include button-border(#518bbb);
+
+                                    img {
+                                        width: 18px;
+                                        height: 18px;
+                                        transform: rotate(-180deg);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .sponsors-separator-line {
+                width: 100%;
+                hr {
+                    width: 100%;
+                    height: 1px;
+                    border: none;
+                    background-color: #eeeeee;
+                }
+            }
+            .sponsors-table-corporate {
+                width: 100%;
+                height: 748.16px;
+
+                @include centering-component();
+                flex-direction: column;
+                gap: 32px;
+
+                .sponsors-table-corporate-title {
+                    span {
+                        @include text-format(
+                            $font-Outfit,
+                            600,
+                            26px,
+                            39px,
+                            -0.5%
+                        );
+                        text-align: center;
+                    }
+                }
+
+                table {
+                    width: 100%;
+                    height: 677.16px;
+                    border: 0.42px solid #abebff;
+                    border-radius: 19.2px;
+                    background-color: #e0f6ff;
+
+                    thead {
+                        tr {
+                            th {
+                                color: #1a2232;
+                                height: 59px;
+                                width: 306px;
+
+                                span {
+                                    @include text-format(
+                                        $font-Outfit,
+                                        500,
+                                        16.62px,
+                                        19.95px,
+                                        0
+                                    );
+                                    text-align: center;
+                                }
+                            }
+
+                            .colom-1 {
+                                width: 366px;
+                            }
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            &:nth-child(odd) {
+                                background-color: map-get(
+                                    $theme-colors,
+                                    secondary
+                                );
+                            }
+
+                            &:nth-child(even) {
+                                background-color: #f8fdff;
+                            }
+
+                            &:last-child {
+                                td {
+                                    background-color: #518bbb;
+                                    color: map-get($theme-colors, secondary);
+
+                                    button {
+                                        height: 33px;
+                                        color: #518bbb;
+                                        cursor: pointer;
+
+                                        @include centering-component();
+                                        gap: 5px;
+                                        @include button-border(
+                                            map-get($theme-colors, secondary)
+                                        );
+                                        background-color: map-get(
+                                            $theme-colors,
+                                            secondary
+                                        );
+
+                                        img {
+                                            width: 18px;
+                                            height: 18px;
+                                            transform: rotate(-180deg);
+                                        }
+                                    }
+
+                                    .corporate-sponsor-cta-table {
+                                        @include centering-component();
+                                    }
+                                }
+
+                                td:first-child {
+                                    border-bottom-left-radius: 19.2px;
+                                }
+
+                                td:last-child {
+                                    border-bottom-right-radius: 19.2px;
+                                }
+                            }
+
+                            td {
+                                height: 59px;
+                                text-align: center;
+
+                                color: #1a2232;
+
+                                span {
+                                    @include text-format(
+                                        $font-Outfit,
+                                        400,
+                                        16.62px,
+                                        19.95px,
+                                        0
+                                    );
+
+                                    img {
+                                        width: 30px;
+                                        height: 30px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .donate {
+            width: 100%;
+            height: 668px;
+            padding: 70px 78px 0 78px;
+            position: relative;
+
+            background-color: #f5faf8;
+            @include centering-component();
+            justify-content: end;
+            flex-direction: column;
+            gap: 10px;
+
+            .donate-content-top {
+                width: 92%;
+                height: 253px;
+                position: absolute;
+                top: 70px;
+                z-index: 5;
+
+                @include centering-component();
+                flex-direction: column;
+                gap: 16px;
+
+                .donate-title {
+                    width: 500px;
+                    @include centering-component();
+                    flex-direction: column;
+                    color: map-get($theme-colors, primary);
+
+                    span {
+                        @include text-format(
+                            $font-Outfit,
+                            700,
+                            40px,
+                            50px,
+                            -0.5%
+                        );
+                        text-align: center;
+                    }
+                }
+
+                .donate-desc {
+                    width: 700px;
+                    @include centering-component();
+                    flex-direction: column;
+
+                    span {
+                        @include text-format($font-Outfit, 300, 20px, 30px, 0);
+                        text-align: center;
+                    }
+                }
+
+                .donate-cta {
+                    button {
+                        height: 43px;
+                        gap: 10px;
+                        cursor: pointer;
+
+                        @include centering-component();
+                        background-color: map-get($theme-colors, primary);
+                        @include button-border(map-get($theme-colors, primary));
+                        color: map-get($theme-colors, secondary);
+
+                        span {
+                            height: 23px;
+                            @include text-format(
+                                $font-Outfit,
+                                600,
+                                14.5px,
+                                22.5px,
+                                -0.5%
+                            );
+                        }
+
+                        img {
+                            transform: rotate(-180deg);
+                        }
+                    }
+                }
+            }
+
+            .donate-content-bottom {
+                width: 100%;
+                height: 425.53px;
+
+                @include centering-component();
+                justify-content: space-between;
+                align-items: end;
+                gap: 20.35px;
+
+                .donate-images-1 {
+                    width: 240.52px;
+                    height: 425.53px;
+                    border: 6px 6px 0 6px solid
+                        map-get($theme-colors, secondary);
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        overflow: hidden;
+                    }
+                }
+
+                .donate-images-2 {
+                    width: 240.52px;
+                    height: 281.22px;
+                    border: 6px 6px 0 6px solid
+                        map-get($theme-colors, secondary);
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .donate-images-3 {
+                    width: 240px;
+                    height: 161px;
+                    border: 6px 6px 0 6px solid
+                        map-get($theme-colors, secondary);
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        overflow: hidden;
+                    }
+                }
+
+                .donate-images-4 {
+                    width: 240.52px;
+                    height: 281.22px;
+                    border: 6px 6px 0 6px solid
+                        map-get($theme-colors, secondary);
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        overflow: hidden;
+                    }
+                }
+
+                .donate-images-5 {
+                    width: 240.52px;
+                    height: 425.53px;
+                    border: 6px 6px 0 6px solid
+                        map-get($theme-colors, secondary);
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+
+        .footer-identity {
+            width: 100%;
+            height: 70px;
+            background-color: map-get($theme-colors, primary);
+            color: map-get($theme-colors, secondary);
+
+            @include centering-component();
+            gap: 10px;
+
+            span {
+                @include text-format($font-Outfit, 700, 18px, 27px, 0);
+                text-align: center;
+            }
+        }
+    }
+}
