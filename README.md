@@ -36,5 +36,5 @@ Pastikan Anda sudah menginstal hal-hal berikut di sistem Anda:
    ```bash
    php artisan serve
 kemudian jalankan juga command dibawah pada terminal baru
-    ```bash
-    npm run dev
+```bash
+npm run dev
